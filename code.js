@@ -5,6 +5,12 @@ $(document).ready(function()
 
     var hungriness = 0;
 
+    function make_alien_hungrier()
+    {
+        hungriness += 5;
+        $('#hungriness').html(hungriness);
+    }
+
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
