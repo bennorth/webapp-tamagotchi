@@ -3,6 +3,8 @@ $(document).ready(function()
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
 
+    var hungriness = 0;
+
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
