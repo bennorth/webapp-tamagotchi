@@ -22,7 +22,7 @@ $(document).ready(function()
         ctx.fill();
     }
 
-    $('#hatch').click(draw_alien);
+    $('#hatch').click(draw_alien_fade_instructions);
 
     function fade_out_hatch_instructions()
     {
