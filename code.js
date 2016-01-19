@@ -23,4 +23,9 @@ $(document).ready(function()
     }
 
     $('#hatch').click(draw_alien);
+
+    function fade_out_hatch_instructions()
+    {
+        $('#hatch-instructions').fadeOut();
+    }
 });
