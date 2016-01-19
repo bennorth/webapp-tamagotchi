@@ -26,7 +26,7 @@ $(document).ready(function()
 
     function fade_out_hatch_instructions()
     {
-        $('#hatch-instructions').fadeOut();
+        $('#hatch-instructions').fadeOut(400, fade_in_levels_display);
     }
 
     function fade_in_levels_display()
