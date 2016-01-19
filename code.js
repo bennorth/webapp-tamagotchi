@@ -28,4 +28,10 @@ $(document).ready(function()
     {
         $('#hatch-instructions').fadeOut();
     }
+
+    function draw_alien_fade_instructions()
+    {
+        draw_alien();
+        fade_out_hatch_instructions();
+    }
 });
