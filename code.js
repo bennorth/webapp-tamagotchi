@@ -3,6 +3,13 @@ $(document).ready(function()
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
 
+    function draw_circle(x, y, r)
+    {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0.0, 2.0 * Math.PI, false);
+        ctx.fill();
+    }
+
     ctx.fillStyle = 'green';
     ctx.beginPath();
     ctx.arc(240, 240, 180, 0.0, 2.0 * Math.PI, false);
