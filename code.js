@@ -29,6 +29,11 @@ $(document).ready(function()
         $('#hatch-instructions').fadeOut();
     }
 
+    function fade_in_levels_display()
+    {
+        $('#levels').fadeIn();
+    }
+
     function draw_alien_fade_instructions()
     {
         draw_alien();
