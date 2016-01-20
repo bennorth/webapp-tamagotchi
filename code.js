@@ -55,6 +55,12 @@ $(document).ready(function()
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
 
+    function feed_alien_some_bread()
+    {
+        hungriness -= 20;
+        $('#hungriness').html('Hungriness: ' + hungriness);
+    }
+
     function time_goes_by()
     {
         make_alien_hungrier();
