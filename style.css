@@ -2,3 +2,4 @@ body { background-color: #eee; margin: 24px; }
 h1 { color: red; }
 #game { background-color: #ffd; }
 #levels { display: none }
+#action-buttons { display: none; }
