@@ -62,5 +62,9 @@ $(document).ready(function()
         {
             window.setTimeout(time_goes_by, 2000);
         }
+        else
+        {
+            $('#messages').html('Oh no!  Your Tamagotchi died!');
+        }
     }
 });
