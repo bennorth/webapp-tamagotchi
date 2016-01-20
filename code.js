@@ -58,6 +58,11 @@ $(document).ready(function()
     function feed_alien_some_bread()
     {
         hungriness -= 20;
+        if (hungriness < 0)
+        {
+            hungriness = 0;
+        }
+
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
 
