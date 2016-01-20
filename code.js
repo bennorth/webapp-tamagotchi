@@ -52,5 +52,7 @@ $(document).ready(function()
     function time_goes_by()
     {
         make_alien_hungrier();
+
+        window.setTimeout(time_goes_by, 2000);
     }
 });
