@@ -4,11 +4,6 @@ $(document).ready(function()
     var ctx = canvas.getContext('2d');
 
     var hungriness = 0;
-    function make_alien_hungrier()
-    {
-        hungriness += 5;
-        $('#hungriness').html('Hungriness: ' + hungriness);
-    }
 
     function draw_circle(x, y, r)
     {
@@ -45,5 +40,11 @@ $(document).ready(function()
     {
         draw_alien();
         fade_out_hatch_instructions();
+    }
+
+    function make_alien_hungrier()
+    {
+        hungriness += 5;
+        $('#hungriness').html('Hungriness: ' + hungriness);
     }
 });
