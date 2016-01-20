@@ -27,8 +27,6 @@ $(document).ready(function()
 
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
-
-        window.setTimeout(make_alien_hungrier, 2000);
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
