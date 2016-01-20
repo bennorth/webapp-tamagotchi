@@ -5,6 +5,11 @@ $(document).ready(function()
 
     var hungriness = 0;
 
+    function alien_is_alive()
+    {
+        return (hungriness < 100);
+    }
+
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
