@@ -61,6 +61,8 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    $('#feed-bread').click(feed_alien_some_bread);
+
     function time_goes_by()
     {
         make_alien_hungrier();
