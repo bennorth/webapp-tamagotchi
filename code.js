@@ -47,4 +47,9 @@ $(document).ready(function()
         hungriness += 5;
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
+
+    function time_goes_by()
+    {
+        make_alien_hungrier();
+    }
 });
