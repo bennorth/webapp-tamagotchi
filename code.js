@@ -40,6 +40,7 @@ $(document).ready(function()
     {
         draw_alien();
         fade_out_hatch_instructions();
+        window.setTimeout(time_goes_by, 2000);
     }
 
     function make_alien_hungrier()
