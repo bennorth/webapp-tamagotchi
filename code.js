@@ -5,12 +5,6 @@ $(document).ready(function()
 
     var hungriness = 0;
 
-    function make_alien_hungrier()
-    {
-        hungriness += 5;
-        $('#hungriness').html(hungriness);
-    }
-
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
@@ -46,5 +40,11 @@ $(document).ready(function()
     {
         draw_alien();
         fade_out_hatch_instructions();
+    }
+
+    function make_alien_hungrier()
+    {
+        hungriness += 5;
+        $('#hungriness').html(hungriness);
     }
 });
