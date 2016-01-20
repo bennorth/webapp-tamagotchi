@@ -39,6 +39,7 @@ $(document).ready(function()
     function fade_in_levels_display()
     {
         $('#levels').fadeIn();
+        $('#action-buttons').fadeIn();
     }
 
     function draw_alien_fade_instructions()
