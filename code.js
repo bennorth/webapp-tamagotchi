@@ -8,7 +8,7 @@ $(document).ready(function()
 
     function alien_is_alive()
     {
-        return (hungriness < 100);
+        return (hungriness < 100) && (health > 0);
     }
 
     function draw_circle(x, y, r)
