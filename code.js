@@ -136,6 +136,7 @@ $(document).ready(function()
             return;
 
         make_alien_hungrier();
+        maybe_make_alien_sicker();
 
         if (alien_is_alive())
         {
