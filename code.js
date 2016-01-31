@@ -31,6 +31,14 @@ $(document).ready(function()
         ctx.fillStyle = 'black';
         draw_circle(210, 90, 10);
         draw_circle(270, 90, 10);
+
+        ctx.lineWidth = 5.0;
+        ctx.beginPath();
+        ctx.moveTo(200, 130);
+        ctx.lineTo(220, 150);
+        ctx.lineTo(260, 150);
+        ctx.lineTo(280, 130);
+        ctx.stroke();
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
