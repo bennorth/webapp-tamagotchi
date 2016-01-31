@@ -91,6 +91,11 @@ $(document).ready(function()
 
     $('#feed-bread').click(feed_alien_some_bread);
 
+    function enable_sweets_button()
+    {
+        $('#feed-sweets').attr('disabled', false);
+    }
+
     function feed_alien_sweets()
     {
         hungriness -= 10;
@@ -100,6 +105,12 @@ $(document).ready(function()
         }
 
         $('#hungriness').html('Hungriness: ' + hungriness);
+
+        // The player can't immediately give more sweets
+        $('#feed-sweets').attr('disabled', true);
+        //
+        // but after a few seconds have gone by, they can.
+        window.setTimeout(enable_sweets_button, 2000);
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
