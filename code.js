@@ -61,6 +61,14 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function maybe_make_alien_sicker()
+    {
+        if (Math.random() < 0.1)
+        {
+            // TODO: Make alien sicker
+        }
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
