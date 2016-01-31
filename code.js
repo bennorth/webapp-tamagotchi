@@ -77,6 +77,8 @@ $(document).ready(function()
             {
                 health = 0;
             }
+
+            $('#health').html('Health: ' + health);
         }
     }
 
