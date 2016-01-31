@@ -6,6 +6,7 @@ $(document).ready(function()
     var age = 0;
     var health = 100;
     var hungriness = 0;
+    var bored = false;
 
     function alien_is_alive()
     {
@@ -50,10 +51,18 @@ $(document).ready(function()
 
             ctx.lineWidth = 5.0;
             ctx.beginPath();
-            ctx.moveTo(200, 130);
-            ctx.lineTo(220, 150);
-            ctx.lineTo(260, 150);
-            ctx.lineTo(280, 130);
+            if (bored)
+            {
+                ctx.moveTo(200, 140);
+                ctx.lineTo(280, 140);
+            }
+            else
+            {
+                ctx.moveTo(200, 130);
+                ctx.lineTo(220, 150);
+                ctx.lineTo(260, 150);
+                ctx.lineTo(280, 130);
+            }
             ctx.stroke();
         }
         else
