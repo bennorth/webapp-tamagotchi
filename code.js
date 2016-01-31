@@ -67,6 +67,11 @@ $(document).ready(function()
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
 
+    function enable_bread_button()
+    {
+        $('#feed-bread').attr('disabled', false);
+    }
+
     function feed_alien_some_bread()
     {
         hungriness -= 20;
