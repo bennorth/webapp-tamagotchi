@@ -5,6 +5,7 @@ $(document).ready(function()
 
     var age = 0;
     var health = 100;
+    var happiness = 100;
     var hungriness = 0;
     var last_played_with = 0;
     var bored = false;
