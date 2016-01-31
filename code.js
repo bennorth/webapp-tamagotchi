@@ -3,6 +3,7 @@ $(document).ready(function()
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
 
+    var health = 100;
     var hungriness = 0;
 
     function alien_is_alive()
@@ -105,6 +106,11 @@ $(document).ready(function()
         }
 
         $('#hungriness').html('Hungriness: ' + hungriness);
+
+        // But sweets are not healthy:
+        health -= 5;
+        $('#health').html('Health: ' + health);
+        // TODO: Make the alien die if all health gone.
 
         // The player can't immediately give more sweets
         $('#feed-sweets').attr('disabled', true);
