@@ -189,6 +189,20 @@ $(document).ready(function()
 
     $('#feed-sweets').click(feed_alien_sweets);
 
+    function enable_medicine_button()
+    {
+        $('#give-medicine').attr('disabled', false);
+    }
+
+    function give_alien_medicine()
+    {
+        make_healthier(40);
+        $('#give-medicine').attr('disabled', true);
+        window.setTimeout(enable_medicine_button, 5000);
+    }
+
+    $('#give-medicine').click(give_alien_medicine);
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
