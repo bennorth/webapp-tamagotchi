@@ -200,6 +200,15 @@ $(document).ready(function()
             bored = true;
             draw_alien();
         }
+
+        if (bored)
+        {
+            make_unhappier(5);
+        }
+        else
+        {
+            make_happier(1);
+        }
     }
 
     function enable_bread_button()
