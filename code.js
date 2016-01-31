@@ -76,6 +76,9 @@ $(document).ready(function()
         }
 
         $('#hungriness').html('Hungriness: ' + hungriness);
+
+        // The player can't immediately give more bread
+        $('#feed-bread').attr('disabled', true);
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
