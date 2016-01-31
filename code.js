@@ -163,6 +163,11 @@ $(document).ready(function()
         $('#age').html('Age: ' + age + ' hours');
     }
 
+    function maybe_make_alien_bored()
+    {
+        // TODO: Make bored if too long has gone by without a game.
+    }
+
     function enable_bread_button()
     {
         $('#feed-bread').attr('disabled', false);
