@@ -221,6 +221,13 @@ $(document).ready(function()
         $('#messages').html('Oh no!  Your Tamagotchi died!');
     }
 
+    function game_over_won()
+    {
+        $('#messages').html('Well done!'
+                            + '  Your Tamagotchi reached the ripe old age'
+                            + ' of 100 hours!');
+    }
+
     function time_goes_by()
     {
         make_alien_hungrier();
