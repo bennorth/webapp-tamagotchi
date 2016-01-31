@@ -132,8 +132,7 @@ $(document).ready(function()
         $('#hungriness').html('Hungriness: ' + hungriness);
 
         // But sweets are not healthy:
-        health -= 5;
-        $('#health').html('Health: ' + health);
+        make_sicker(5);
 
         if (alien_is_alive())
         {
