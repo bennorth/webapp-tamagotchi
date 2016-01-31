@@ -68,6 +68,14 @@ $(document).ready(function()
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
 
+    function maybe_make_alien_sicker()
+    {
+        if (Math.random() < 0.1)
+        {
+            // TODO: Make alien sicker
+        }
+    }
+
     function enable_bread_button()
     {
         $('#feed-bread').attr('disabled', false);
