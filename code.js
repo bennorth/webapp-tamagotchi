@@ -119,6 +119,17 @@ $(document).ready(function()
         }
     }
 
+    function make_happier(happiness_gained)
+    {
+        happiness += happiness_gained;
+        if (happiness > 100)
+        {
+            happiness = 100;
+        }
+
+        $('#happiness').html('Happiness: ' + happiness);
+    }
+
     function make_sicker(health_lost)
     {
         health -= health_lost;
