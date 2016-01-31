@@ -94,6 +94,12 @@ $(document).ready(function()
     {
         hungriness += 5;
         $('#hungriness').html('Hungriness: ' + hungriness);
+
+        // If it gets too hungry, it starts losing health too.
+        if (hungriness > 50)
+        {
+            make_sicker(5);
+        }
     }
 
     function make_sicker(health_lost)
