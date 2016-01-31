@@ -170,6 +170,7 @@ $(document).ready(function()
 
         make_alien_hungrier();
         maybe_make_alien_sicker();
+        make_alien_older();
 
         if (alien_is_alive())
         {
