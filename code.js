@@ -110,13 +110,19 @@ $(document).ready(function()
         // But sweets are not healthy:
         health -= 5;
         $('#health').html('Health: ' + health);
-        // TODO: Make the alien die if all health gone.
 
-        // The player can't immediately give more sweets
-        $('#feed-sweets').attr('disabled', true);
-        //
-        // but after a few seconds have gone by, they can.
-        window.setTimeout(enable_sweets_button, 2000);
+        if (alien_is_alive())
+        {
+            // The player can't immediately give more sweets
+            $('#feed-sweets').attr('disabled', true);
+            //
+            // but after a few seconds have gone by, they can.
+            window.setTimeout(enable_sweets_button, 200);
+        }
+        else
+        {
+            game_over_lost();
+        }
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
