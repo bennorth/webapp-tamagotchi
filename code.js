@@ -72,6 +72,11 @@ $(document).ready(function()
             }
 
             $('#health').html(health);
+
+            if ( ! alien_is_alive())
+            {
+                game_over_lost();
+            }
         }
     }
 
