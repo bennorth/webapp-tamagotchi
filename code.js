@@ -114,6 +114,19 @@ $(document).ready(function()
         }
     }
 
+    function make_healthier(health_gained)
+    {
+        health += health_gained;
+        if (health > 100)
+        {
+            health = 100;
+        }
+
+        $('#health').html('Health: ' + health);
+
+        draw_alien();
+    }
+
     function maybe_make_alien_sicker()
     {
         if (Math.random() < 0.1)
