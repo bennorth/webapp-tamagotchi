@@ -3,6 +3,7 @@ $(document).ready(function()
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
 
+    var age = 0;
     var health = 100;
     var hungriness = 0;
 
