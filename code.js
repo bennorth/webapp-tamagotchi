@@ -239,9 +239,13 @@ $(document).ready(function()
         maybe_make_alien_sicker();
         make_alien_older();
 
-        if (alien_is_alive())
+        if (alien_is_alive() && alien_still_growing())
         {
             window.setTimeout(time_goes_by, 2000);
+        }
+        else if (alien_is_alive())
+        {
+            game_over_won();
         }
         else
         {
