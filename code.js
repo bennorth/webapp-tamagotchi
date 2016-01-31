@@ -36,17 +36,38 @@ $(document).ready(function()
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
 
-        ctx.fillStyle = 'black';
-        draw_circle(210, 90, 10);
-        draw_circle(270, 90, 10);
+        if (alien_is_alive())
+        {
+            ctx.fillStyle = 'black';
+            draw_circle(210, 90, 10);
+            draw_circle(270, 90, 10);
 
-        ctx.lineWidth = 5.0;
-        ctx.beginPath();
-        ctx.moveTo(200, 130);
-        ctx.lineTo(220, 150);
-        ctx.lineTo(260, 150);
-        ctx.lineTo(280, 130);
-        ctx.stroke();
+            ctx.lineWidth = 5.0;
+            ctx.beginPath();
+            ctx.moveTo(200, 130);
+            ctx.lineTo(220, 150);
+            ctx.lineTo(260, 150);
+            ctx.lineTo(280, 130);
+            ctx.stroke();
+        }
+        else
+        {
+            ctx.lineWidth = 2.0;
+
+            ctx.beginPath();
+            ctx.moveTo(200, 80);
+            ctx.lineTo(220, 100);
+            ctx.moveTo(220, 80);
+            ctx.lineTo(200, 100);
+            ctx.moveTo(260, 80);
+            ctx.lineTo(280, 100);
+            ctx.moveTo(280, 80);
+            ctx.lineTo(260, 100);
+
+            ctx.moveTo(200, 140);
+            ctx.lineTo(280, 140);
+            ctx.stroke();
+        }
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
