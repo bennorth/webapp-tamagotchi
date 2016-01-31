@@ -101,6 +101,9 @@ $(document).ready(function()
 
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
+
+    $('#feed-sweets').click(feed_alien_sweets);
+
     function time_goes_by()
     {
         make_alien_hungrier();
