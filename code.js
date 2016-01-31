@@ -72,7 +72,11 @@ $(document).ready(function()
     {
         if (Math.random() < 0.1)
         {
-            // TODO: Make alien sicker
+            health -= 40;
+            if (health < 0)
+            {
+                health = 0;
+            }
         }
     }
 
