@@ -142,10 +142,6 @@ $(document).ready(function()
             // but after a few seconds have gone by, they can.
             window.setTimeout(enable_sweets_button, 200);
         }
-        else
-        {
-            game_over_lost();
-        }
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
