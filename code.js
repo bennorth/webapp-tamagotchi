@@ -97,6 +97,12 @@ $(document).ready(function()
         $('#health').html(health);
     }
 
+    function make_alien_older()
+    {
+        age += 1;
+        $('#age').html(age);
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
