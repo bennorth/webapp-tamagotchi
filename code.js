@@ -68,6 +68,22 @@ $(document).ready(function()
         $('#hungriness').html('Hungriness: ' + hungriness);
     }
 
+    function make_sicker(health_lost)
+    {
+        health -= health_lost;
+        if (health < 0)
+        {
+            health = 0;
+        }
+
+        $('#health').html('Health: ' + health);
+
+        if ( ! alien_is_alive())
+        {
+            game_over_lost();
+        }
+    }
+
     function maybe_make_alien_sicker()
     {
         if (Math.random() < 0.1)
