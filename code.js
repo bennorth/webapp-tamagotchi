@@ -143,6 +143,7 @@ $(document).ready(function()
     function time_goes_by()
     {
         make_alien_hungrier();
+        maybe_make_alien_sicker();
 
         if (alien_is_alive())
         {
