@@ -12,6 +12,11 @@ $(document).ready(function()
         return (hungriness < 100) && (health > 0);
     }
 
+    function alien_still_growing()
+    {
+        return (age < 100);
+    }
+
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
