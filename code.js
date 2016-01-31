@@ -165,7 +165,12 @@ $(document).ready(function()
 
     function maybe_make_alien_bored()
     {
-        // TODO: Make bored if too long has gone by without a game.
+        var hours_since_last_played_with = age - last_played_with;
+        if (hours_since_last_played_with > 5)
+        {
+            bored = true;
+            draw_alien();
+        }
     }
 
     function enable_bread_button()
