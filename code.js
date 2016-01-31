@@ -241,6 +241,22 @@ $(document).ready(function()
 
     $('#give-medicine').click(give_alien_medicine);
 
+    function enable_play_game_button()
+    {
+        $('#play-game').attr('disabled', false);
+    }
+
+    function play_game_with_alien()
+    {
+        last_played_with = age;
+        bored = false;
+        draw_alien();
+        $('#play-game').attr('disabled', true);
+        window.setTimeout(enable_play_game_button, 3000);
+    }
+
+    $('#play-game').click(play_game_with_alien);
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
