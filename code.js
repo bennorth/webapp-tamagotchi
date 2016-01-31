@@ -121,6 +121,11 @@ $(document).ready(function()
 
     $('#feed-sweets').click(feed_alien_sweets);
 
+    function game_over_lost()
+    {
+        $('#messages').html('Oh no!  Your Tamagotchi died!');
+    }
+
     function time_goes_by()
     {
         make_alien_hungrier();
@@ -131,7 +136,7 @@ $(document).ready(function()
         }
         else
         {
-            $('#messages').html('Oh no!  Your Tamagotchi died!');
+            game_over_lost();
         }
     }
 });
