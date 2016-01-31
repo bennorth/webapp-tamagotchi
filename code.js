@@ -38,7 +38,14 @@ $(document).ready(function()
     function draw_alien()
     {
         ctx.clearRect(0, 0, 480, 480);
-        ctx.fillStyle = 'blue';
+        if (health >= 50)
+        {
+            ctx.fillStyle = 'blue';
+        }
+        else
+        {
+            ctx.fillStyle = 'rgb(0, 255, 200)';
+        }
 
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
