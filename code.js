@@ -85,6 +85,8 @@ $(document).ready(function()
 
         $('#health').html('Health: ' + health);
 
+        draw_alien();
+
         if ( ! alien_is_alive())
         {
             game_over_lost();
