@@ -177,13 +177,17 @@ $(document).ready(function()
         maybe_make_alien_sicker();
         make_alien_older();
 
-        if (alien_is_alive())
+        if (age == 100)
         {
-            window.setTimeout(time_goes_by, 2000);
+            game_over_won();
+        }
+        else if ( ! alien_is_alive())
+        {
+            game_over_lost();
         }
         else
         {
-            game_over_lost();
+            window.setTimeout(time_goes_by, 2000);
         }
     }
 });
