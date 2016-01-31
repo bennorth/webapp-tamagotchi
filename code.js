@@ -68,6 +68,17 @@ $(document).ready(function()
 
     $('#feed-bread').click(feed_alien_some_bread);
 
+    function feed_alien_sweets()
+    {
+        hungriness -= 10;
+        if (hungriness < 0)
+        {
+            hungriness = 0;
+        }
+
+        $('#hungriness').html(hungriness);
+    }
+
     function time_goes_by()
     {
         make_alien_hungrier();
