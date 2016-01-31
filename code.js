@@ -119,6 +119,23 @@ $(document).ready(function()
         }
     }
 
+    function make_unhappier(happiness_lost)
+    {
+        happiness -= happiness_lost;
+        if (happiness < 0)
+        {
+            happiness = 0;
+        }
+
+        $('#happiness').html('Happiness: ' + happiness);
+
+        // If it gets a bit unhappy, it starts losing health.
+        if (happiness < 80)
+        {
+            make_sicker(5);
+        }
+    }
+
     function make_happier(happiness_gained)
     {
         happiness += happiness_gained;
