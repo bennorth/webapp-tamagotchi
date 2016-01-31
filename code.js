@@ -142,6 +142,12 @@ $(document).ready(function()
         }
     }
 
+    function make_alien_older()
+    {
+        age += 1;
+        $('#age').html('Age: ' + age + ' hours');
+    }
+
     function enable_bread_button()
     {
         $('#feed-bread').attr('disabled', false);
