@@ -92,7 +92,10 @@ $(document).ready(function()
         health -= 5;
         $('#health').html(health);
 
-        // TODO: Make the alien die if all health gone.
+        if ( ! alien_is_alive())
+        {
+            game_over_lost();
+        }
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
