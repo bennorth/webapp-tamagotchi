@@ -112,7 +112,7 @@ $(document).ready(function()
         }
         else
         {
-            $('#messages').html('Oh no!  Your Tamagotchi died!');
+            game_over_lost();
         }
     }
 });
