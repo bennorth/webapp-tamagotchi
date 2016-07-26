@@ -22,5 +22,16 @@ $(document).ready(function()
         ctx.fill();
     }
 
-    $('#hatch').click(draw_alien);
+    $('#hatch').click(draw_alien_fade_instructions);
+
+    function fade_out_hatch_instructions()
+    {
+        $('#hatch-instructions').fadeOut();
+    }
+
+    function draw_alien_fade_instructions()
+    {
+        draw_alien();
+        fade_out_hatch_instructions();
+    }
 });
