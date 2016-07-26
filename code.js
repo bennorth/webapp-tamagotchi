@@ -66,9 +66,18 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function temporarily_disable(button_id)
+    {
+        $(button_id).attr('disabled', true);
+        window.setTimeout(
+            function() { $(button_id).attr('disabled', false); },
+            3000);
+    }
+
     function feed_alien_some_bread()
     {
         feed_alien(20);
+        temporarily_disable('#feed-bread');
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
@@ -76,6 +85,7 @@ $(document).ready(function()
     function feed_alien_sweets()
     {
         feed_alien(10);
+        temporarily_disable('#feed-sweets');
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
