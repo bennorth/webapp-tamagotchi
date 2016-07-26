@@ -68,26 +68,14 @@ $(document).ready(function()
 
     function feed_alien_some_bread()
     {
-        hungriness -= 20;
-        if (hungriness < 0)
-        {
-            hungriness = 0;
-        }
-
-        $('#hungriness').html(hungriness);
+        feed_alien(20);
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
 
     function feed_alien_sweets()
     {
-        hungriness -= 10;
-        if (hungriness < 0)
-        {
-            hungriness = 0;
-        }
-
-        $('#hungriness').html(hungriness);
+        feed_alien(10);
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
