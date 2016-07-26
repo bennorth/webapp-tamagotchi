@@ -5,10 +5,9 @@ $(document).ready(function()
 
     var hungriness = 0;
 
-    function make_alien_hungrier()
+    function alien_is_alive()
     {
-        hungriness += 5;
-        $('#hungriness').html(hungriness);
+        return (hungriness < 100);
     }
 
     function draw_circle(x, y, r)
@@ -28,8 +27,6 @@ $(document).ready(function()
 
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
-
-        window.setTimeout(make_alien_hungrier, 2000);
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
@@ -48,5 +45,26 @@ $(document).ready(function()
     {
         draw_alien();
         fade_out_hatch_instructions();
+        window.setTimeout(time_goes_by, 2000);
+    }
+
+    function make_alien_hungrier()
+    {
+        hungriness += 5;
+        $('#hungriness').html(hungriness);
+    }
+
+    function time_goes_by()
+    {
+        make_alien_hungrier();
+
+        if (alien_is_alive())
+        {
+            window.setTimeout(time_goes_by, 2000);
+        }
+        else
+        {
+            $('#messages').html('Oh no!  Your Tamagotchi died!');
+        }
     }
 });
