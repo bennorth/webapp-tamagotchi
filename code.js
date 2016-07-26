@@ -82,12 +82,7 @@ $(document).ready(function()
     function feed_alien_some_bread()
     {
         feed_alien(20);
-
-        // The player can't immediately give more bread
-        $('#feed-bread').attr('disabled', true);
-        //
-        // but after a few seconds have gone by, they can.
-        window.setTimeout(enable_bread_button, 3000);
+        temporarily_disable('#feed-bread');
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
