@@ -87,6 +87,12 @@ $(document).ready(function()
     {
         feed_alien(10);
         temporarily_disable('#feed-sweets');
+
+        // Sweets are not healthy:
+        health -= 5;
+        $('#health').html(health);
+
+        // TODO: Make the alien die if all health gone.
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
