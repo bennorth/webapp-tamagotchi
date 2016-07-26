@@ -71,6 +71,14 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function temporarily_disable(button_id)
+    {
+        $(button_id).attr('disabled', true);
+        window.setTimeout(
+            function() { $(button_id).attr('disabled', false); },
+            3000);
+    }
+
     function feed_alien_some_bread()
     {
         feed_alien(20);
