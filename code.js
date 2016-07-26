@@ -3,6 +3,14 @@ $(document).ready(function()
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
 
+    var hungriness = 0;
+
+    function make_alien_hungrier()
+    {
+        hungriness += 5;
+        $('#hungriness').html(hungriness);
+    }
+
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
@@ -20,6 +28,8 @@ $(document).ready(function()
 
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
+
+        window.setTimeout(make_alien_hungrier, 2000);
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
