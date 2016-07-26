@@ -55,9 +55,9 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
-    function feed_alien_some_bread()
+    function feed_alien(hungriness_reduction)
     {
-        hungriness -= 20;
+        hungriness -= hungriness_reduction;
         if (hungriness < 0)
         {
             hungriness = 0;
@@ -66,7 +66,19 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function feed_alien_some_bread()
+    {
+        feed_alien(20);
+    }
+
     $('#feed-bread').click(feed_alien_some_bread);
+
+    function feed_alien_sweets()
+    {
+        feed_alien(10);
+    }
+
+    $('#feed-sweets').click(feed_alien_sweets);
 
     function time_goes_by()
     {
