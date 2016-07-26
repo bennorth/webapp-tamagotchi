@@ -55,6 +55,17 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function feed_alien(hungriness_reduction)
+    {
+        hungriness -= hungriness_reduction;
+        if (hungriness < 0)
+        {
+            hungriness = 0;
+        }
+
+        $('#hungriness').html(hungriness);
+    }
+
     function feed_alien_some_bread()
     {
         hungriness -= 20;
