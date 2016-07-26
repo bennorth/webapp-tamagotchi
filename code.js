@@ -85,6 +85,7 @@ $(document).ready(function()
     function feed_alien_sweets()
     {
         feed_alien(10);
+        temporarily_disable('#feed-sweets');
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
