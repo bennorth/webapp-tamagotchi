@@ -69,6 +69,9 @@ $(document).ready(function()
     function feed_alien_some_bread()
     {
         feed_alien(20);
+
+        // The player can't immediately give more bread
+        $('#feed-bread').attr('disabled', true);
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
