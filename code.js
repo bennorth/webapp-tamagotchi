@@ -4,6 +4,7 @@ $(document).ready(function()
     var ctx = canvas.getContext('2d');
 
     var hungriness = 0;
+    var health = 100;
 
     function alien_is_alive()
     {
