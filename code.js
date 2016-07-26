@@ -4,10 +4,11 @@ $(document).ready(function()
     var ctx = canvas.getContext('2d');
 
     var hungriness = 0;
+    var health = 100;
 
     function alien_is_alive()
     {
-        return (hungriness < 100);
+        return (hungriness < 100) && (health > 0);
     }
 
     function draw_circle(x, y, r)
@@ -86,9 +87,23 @@ $(document).ready(function()
     {
         feed_alien(10);
         temporarily_disable('#feed-sweets');
+
+        // Sweets are not healthy:
+        health -= 5;
+        $('#health').html(health);
+
+        if ( ! alien_is_alive())
+        {
+            game_over_lost();
+        }
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
+
+    function game_over_lost()
+    {
+        $('#messages').html('Oh no!  Your Tamagotchi died!');
+    }
 
     function time_goes_by()
     {
@@ -100,7 +115,7 @@ $(document).ready(function()
         }
         else
         {
-            $('#messages').html('Oh no!  Your Tamagotchi died!');
+            game_over_lost();
         }
     }
 });
