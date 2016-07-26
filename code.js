@@ -33,12 +33,13 @@ $(document).ready(function()
 
     function fade_out_hatch_instructions()
     {
-        $('#hatch-instructions').fadeOut(400, fade_in_levels_display);
+        $('#hatch-instructions').fadeOut(400, fade_in_playing_sections);
     }
 
-    function fade_in_levels_display()
+    function fade_in_playing_sections()
     {
         $('#levels').fadeIn();
+        $('#action-buttons').fadeIn();
     }
 
     function draw_alien_fade_instructions()
@@ -53,6 +54,19 @@ $(document).ready(function()
         hungriness += 5;
         $('#hungriness').html(hungriness);
     }
+
+    function feed_alien_some_bread()
+    {
+        hungriness -= 20;
+        if (hungriness < 0)
+        {
+            hungriness = 0;
+        }
+
+        $('#hungriness').html(hungriness);
+    }
+
+    $('#feed-bread').click(feed_alien_some_bread);
 
     function time_goes_by()
     {
