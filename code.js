@@ -182,7 +182,7 @@ $(document).ready(function()
         maybe_make_alien_sicker();
         make_alien_older();
 
-        if (age == 100)
+        if ( ! alien_still_growing())
         {
             game_over_won();
         }
