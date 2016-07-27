@@ -6,6 +6,7 @@ $(document).ready(function()
     var hungriness = 0;
     var health = 100;
     var happiness = 100;
+    var bored = false;
     var age = 0;
 
     function alien_is_alive()
