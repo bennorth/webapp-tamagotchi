@@ -106,6 +106,7 @@ $(document).ready(function()
     {
         hungriness += 5;
         $('#hungriness').html(hungriness);
+        draw_alien();
     }
 
     function make_alien_sicker(health_lost)
@@ -179,6 +180,7 @@ $(document).ready(function()
         }
 
         $('#hungriness').html(hungriness);
+        draw_alien();
     }
 
     function temporarily_disable(button_id)
