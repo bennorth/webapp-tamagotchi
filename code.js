@@ -57,7 +57,14 @@ $(document).ready(function()
         ctx.lineWidth = 5.0;
         ctx.lineCap = 'round';
         ctx.beginPath();
-        if (bored)
+        if (happiness < 50)
+        {
+            ctx.moveTo(200, 150);
+            ctx.lineTo(220, 130);
+            ctx.lineTo(260, 130);
+            ctx.lineTo(280, 150);
+        }
+        else if (bored)
         {
             ctx.moveTo(200, 145);
             ctx.lineTo(280, 145);
