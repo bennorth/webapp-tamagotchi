@@ -184,6 +184,12 @@ $(document).ready(function()
 
     $('#give-medicine').click(give_alien_medicine);
 
+    function play_game()
+    {
+        last_game_age = age;
+        temporarily_disable('#play-game');
+    }
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
