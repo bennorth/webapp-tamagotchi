@@ -5,15 +5,21 @@ $(document).ready(function()
 
     var hungriness = 0;
     var health = 100;
+    var age = 0;
 
     function alien_is_alive()
     {
         return (hungriness < 100) && (health > 0);
     }
 
+    function alien_still_growing()
+    {
+        return (age < 100);
+    }
+
     function game_is_running()
     {
-        return alien_is_alive();
+        return alien_is_alive() && alien_still_growing();
     }
 
     function draw_circle(x, y, r)
@@ -96,6 +102,12 @@ $(document).ready(function()
         $('#health').html(health);
     }
 
+    function make_alien_older()
+    {
+        age += 1;
+        $('#age').html(age);
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
@@ -156,6 +168,11 @@ $(document).ready(function()
         $('#messages').html('Oh no!  Your Tamagotchi died!');
     }
 
+    function game_over_won()
+    {
+        $('#messages').html('Well done!  Your Tamagotchi reached old age!');
+    }
+
     function time_goes_by()
     {
         if ( ! game_is_running())
@@ -163,14 +180,19 @@ $(document).ready(function()
 
         make_alien_hungrier();
         maybe_make_alien_sicker();
+        make_alien_older();
 
-        if (alien_is_alive())
+        if ( ! alien_still_growing())
         {
-            window.setTimeout(time_goes_by, 2000);
+            game_over_won();
+        }
+        else if ( ! alien_is_alive())
+        {
+            game_over_lost();
         }
         else
         {
-            game_over_lost();
+            window.setTimeout(time_goes_by, 2000);
         }
     }
 });
