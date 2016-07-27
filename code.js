@@ -12,7 +12,7 @@ $(document).ready(function()
 
     function alien_is_alive()
     {
-        return (hungriness < 100) && (health > 0);
+        return (hungriness < 100) && (health > 0) && (happiness > 0);
     }
 
     function alien_still_growing()
