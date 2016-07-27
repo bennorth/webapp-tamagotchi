@@ -80,6 +80,17 @@ $(document).ready(function()
         }
     }
 
+    function make_healthier()
+    {
+        health += 40;
+        if (health > 100)
+        {
+            health = 100;
+        }
+
+        $('#health').html(health);
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
@@ -129,6 +140,17 @@ $(document).ready(function()
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
+
+    function give_alien_medicine()
+    {
+        if ( ! game_is_running())
+            return;
+
+        make_healthier();
+        temporarily_disable('#give-medicine');
+    }
+
+    $('#give-medicine').click(give_alien_medicine);
 
     function game_over_lost()
     {
