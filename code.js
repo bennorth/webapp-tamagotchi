@@ -57,10 +57,18 @@ $(document).ready(function()
         ctx.lineWidth = 5.0;
         ctx.lineCap = 'round';
         ctx.beginPath();
-        ctx.moveTo(200, 130);
-        ctx.lineTo(220, 150);
-        ctx.lineTo(260, 150);
-        ctx.lineTo(280, 130);
+        if (bored)
+        {
+            ctx.moveTo(200, 145);
+            ctx.lineTo(280, 145);
+        }
+        else
+        {
+            ctx.moveTo(200, 130);
+            ctx.lineTo(220, 150);
+            ctx.lineTo(260, 150);
+            ctx.lineTo(280, 130);
+        }
         ctx.stroke();
     }
 
