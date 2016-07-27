@@ -111,6 +111,24 @@ $(document).ready(function()
         $('#age').html(age);
     }
 
+    function update_alien_happiness()
+    {
+        bored = ((age - last_game_age) >= 3);
+
+        if (bored)
+        {
+            happiness -= 5;
+            if (happiness < 0) happiness = 0;
+        }
+        else
+        {
+            happiness += 2;
+            if (happiness > 100) happiness = 100;
+        }
+
+        $('#happiness').html(happiness);
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
