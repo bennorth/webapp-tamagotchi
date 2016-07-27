@@ -80,6 +80,17 @@ $(document).ready(function()
         }
     }
 
+    function make_healthier()
+    {
+        health += 40;
+        if (health > 100)
+        {
+            health = 100;
+        }
+
+        $('#health').html(health);
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
