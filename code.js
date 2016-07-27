@@ -61,6 +61,25 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function maybe_make_alien_sicker()
+    {
+        if (Math.random() < 0.1)
+        {
+            health -= 40;
+            if (health < 0)
+            {
+                health = 0;
+            }
+
+            $('#health').html(health);
+
+            if ( ! alien_is_alive())
+            {
+                game_over_lost();
+            }
+        }
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
@@ -122,6 +141,7 @@ $(document).ready(function()
             return;
 
         make_alien_hungrier();
+        maybe_make_alien_sicker();
 
         if (alien_is_alive())
         {
