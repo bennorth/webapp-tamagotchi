@@ -157,6 +157,7 @@ $(document).ready(function()
         }
 
         $('#happiness').html(happiness);
+        draw_alien();
     }
 
     function feed_alien(hungriness_reduction)
