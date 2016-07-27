@@ -99,6 +99,7 @@ $(document).ready(function()
         }
 
         $('#health').html(health);
+        draw_alien();
 
         if ( ! alien_is_alive())
         {
@@ -123,6 +124,7 @@ $(document).ready(function()
         }
 
         $('#health').html(health);
+        draw_alien();
     }
 
     function make_alien_older()
