@@ -193,6 +193,8 @@ $(document).ready(function()
         temporarily_disable('#play-game');
     }
 
+    $('#play-game').click(play_game);
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
