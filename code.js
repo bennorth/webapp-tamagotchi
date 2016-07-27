@@ -150,6 +150,8 @@ $(document).ready(function()
         temporarily_disable('#give-medicine');
     }
 
+    $('#give-medicine').click(give_alien_medicine);
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
