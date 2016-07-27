@@ -163,6 +163,11 @@ $(document).ready(function()
         $('#messages').html('Oh no!  Your Tamagotchi died!');
     }
 
+    function game_over_won()
+    {
+        $('#messages').html('Well done!  Your Tamagotchi reached old age!');
+    }
+
     function time_goes_by()
     {
         if ( ! game_is_running())
