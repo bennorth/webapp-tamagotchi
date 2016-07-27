@@ -19,7 +19,7 @@ $(document).ready(function()
 
     function game_is_running()
     {
-        return alien_is_alive();
+        return alien_is_alive() && alien_still_growing();
     }
 
     function draw_circle(x, y, r)
