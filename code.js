@@ -38,10 +38,20 @@ $(document).ready(function()
     function draw_alien()
     {
         ctx.clearRect(0, 0, 480, 480);
-        ctx.fillStyle = 'blue';
+        if (health >= 50)
+        {
+            ctx.fillStyle = 'blue';
+        }
+        else
+        {
+            ctx.fillStyle = 'rgb(0, 255, 200)';
+        }
 
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
+
+        ctx.fillStyle = 'rgb(255, 255, 221)';
+        draw_circle(240, 300, hungriness);
 
         ctx.fillStyle = 'black';
         draw_circle(210, 90, 10);
@@ -50,10 +60,25 @@ $(document).ready(function()
         ctx.lineWidth = 5.0;
         ctx.lineCap = 'round';
         ctx.beginPath();
-        ctx.moveTo(200, 130);
-        ctx.lineTo(220, 150);
-        ctx.lineTo(260, 150);
-        ctx.lineTo(280, 130);
+        if (happiness < 50)
+        {
+            ctx.moveTo(200, 150);
+            ctx.lineTo(220, 130);
+            ctx.lineTo(260, 130);
+            ctx.lineTo(280, 150);
+        }
+        else if (bored)
+        {
+            ctx.moveTo(200, 145);
+            ctx.lineTo(280, 145);
+        }
+        else
+        {
+            ctx.moveTo(200, 130);
+            ctx.lineTo(220, 150);
+            ctx.lineTo(260, 150);
+            ctx.lineTo(280, 130);
+        }
         ctx.stroke();
     }
 
@@ -81,6 +106,7 @@ $(document).ready(function()
     {
         hungriness += 5;
         $('#hungriness').html(hungriness);
+        draw_alien();
     }
 
     function make_alien_sicker(health_lost)
@@ -92,6 +118,7 @@ $(document).ready(function()
         }
 
         $('#health').html(health);
+        draw_alien();
 
         if ( ! alien_is_alive())
         {
@@ -116,6 +143,7 @@ $(document).ready(function()
         }
 
         $('#health').html(health);
+        draw_alien();
     }
 
     function make_alien_older()
@@ -140,6 +168,7 @@ $(document).ready(function()
         }
 
         $('#happiness').html(happiness);
+        draw_alien();
     }
 
     function feed_alien(hungriness_reduction)
@@ -151,6 +180,7 @@ $(document).ready(function()
         }
 
         $('#hungriness').html(hungriness);
+        draw_alien();
     }
 
     function temporarily_disable(button_id)
@@ -203,6 +233,7 @@ $(document).ready(function()
             return;
 
         last_game_age = age;
+        update_alien_happiness();
         temporarily_disable('#play-game');
     }
 
