@@ -202,6 +202,7 @@ $(document).ready(function()
         make_alien_hungrier();
         maybe_make_alien_sicker();
         make_alien_older();
+        update_alien_happiness();
 
         if ( ! alien_still_growing())
         {
