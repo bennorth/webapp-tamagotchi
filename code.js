@@ -50,6 +50,9 @@ $(document).ready(function()
         draw_circle(240, 110, 80);
         draw_circle(240, 300, 150);
 
+        ctx.fillStyle = 'rgb(255, 255, 221)';
+        draw_circle(240, 300, hungriness);
+
         ctx.fillStyle = 'black';
         draw_circle(210, 90, 10);
         draw_circle(270, 90, 10);
