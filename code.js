@@ -48,6 +48,7 @@ $(document).ready(function()
         draw_circle(270, 90, 10);
 
         ctx.lineWidth = 5.0;
+        ctx.lineCap = 'round';
         ctx.beginPath();
         ctx.moveTo(200, 130);
         ctx.lineTo(220, 150);
