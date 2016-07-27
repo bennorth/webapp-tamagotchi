@@ -7,6 +7,7 @@ $(document).ready(function()
     var health = 100;
     var happiness = 100;
     var bored = false;
+    var last_game_age = 0;
     var age = 0;
 
     function alien_is_alive()
