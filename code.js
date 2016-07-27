@@ -82,6 +82,9 @@ $(document).ready(function()
 
     function feed_alien_some_bread()
     {
+        if ( ! game_is_running())
+            return;
+
         feed_alien(20);
         temporarily_disable('#feed-bread');
     }
@@ -90,6 +93,9 @@ $(document).ready(function()
 
     function feed_alien_sweets()
     {
+        if ( ! game_is_running())
+            return;
+
         feed_alien(10);
         temporarily_disable('#feed-sweets');
 
@@ -112,6 +118,9 @@ $(document).ready(function()
 
     function time_goes_by()
     {
+        if ( ! game_is_running())
+            return;
+
         make_alien_hungrier();
 
         if (alien_is_alive())
