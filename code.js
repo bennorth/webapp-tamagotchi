@@ -141,6 +141,12 @@ $(document).ready(function()
 
     $('#feed-sweets').click(feed_alien_sweets);
 
+    function give_alien_medicine()
+    {
+        make_healthier();
+        temporarily_disable('#give-medicine');
+    }
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
