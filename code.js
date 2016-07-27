@@ -11,6 +11,11 @@ $(document).ready(function()
         return (hungriness < 100) && (health > 0);
     }
 
+    function game_is_running()
+    {
+        return alien_is_alive();
+    }
+
     function draw_circle(x, y, r)
     {
         ctx.beginPath();
