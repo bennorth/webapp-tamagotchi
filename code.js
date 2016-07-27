@@ -5,11 +5,14 @@ $(document).ready(function()
 
     var hungriness = 0;
     var health = 100;
+    var happiness = 100;
+    var bored = false;
+    var last_game_age = 0;
     var age = 0;
 
     function alien_is_alive()
     {
-        return (hungriness < 100) && (health > 0);
+        return (hungriness < 100) && (health > 0) && (happiness > 0);
     }
 
     function alien_still_growing()
@@ -108,6 +111,24 @@ $(document).ready(function()
         $('#age').html(age);
     }
 
+    function update_alien_happiness()
+    {
+        bored = ((age - last_game_age) >= 3);
+
+        if (bored)
+        {
+            happiness -= 5;
+            if (happiness < 0) happiness = 0;
+        }
+        else
+        {
+            happiness += 2;
+            if (happiness > 100) happiness = 100;
+        }
+
+        $('#happiness').html(happiness);
+    }
+
     function feed_alien(hungriness_reduction)
     {
         hungriness -= hungriness_reduction;
@@ -163,6 +184,17 @@ $(document).ready(function()
 
     $('#give-medicine').click(give_alien_medicine);
 
+    function play_game()
+    {
+        if ( ! game_is_running())
+            return;
+
+        last_game_age = age;
+        temporarily_disable('#play-game');
+    }
+
+    $('#play-game').click(play_game);
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
@@ -181,6 +213,7 @@ $(document).ready(function()
         make_alien_hungrier();
         maybe_make_alien_sicker();
         make_alien_older();
+        update_alien_happiness();
 
         if ( ! alien_still_growing())
         {
