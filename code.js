@@ -221,6 +221,7 @@ $(document).ready(function()
             return;
 
         last_game_age = age;
+        update_alien_happiness();
         temporarily_disable('#play-game');
     }
 
