@@ -81,18 +81,7 @@ $(document).ready(function()
     {
         if (Math.random() < 0.1)
         {
-            health -= 40;
-            if (health < 0)
-            {
-                health = 0;
-            }
-
-            $('#health').html(health);
-
-            if ( ! alien_is_alive())
-            {
-                game_over_lost();
-            }
+            make_alien_sicker(40);
         }
     }
 
