@@ -61,22 +61,27 @@ $(document).ready(function()
         $('#hungriness').html(hungriness);
     }
 
+    function make_alien_sicker(health_lost)
+    {
+        health -= health_lost;
+        if (health < 0)
+        {
+            health = 0;
+        }
+
+        $('#health').html(health);
+
+        if ( ! alien_is_alive())
+        {
+            game_over_lost();
+        }
+    }
+
     function maybe_make_alien_sicker()
     {
         if (Math.random() < 0.1)
         {
-            health -= 40;
-            if (health < 0)
-            {
-                health = 0;
-            }
-
-            $('#health').html(health);
-
-            if ( ! alien_is_alive())
-            {
-                game_over_lost();
-            }
+            make_alien_sicker(40);
         }
     }
 
@@ -130,13 +135,7 @@ $(document).ready(function()
         temporarily_disable('#feed-sweets');
 
         // Sweets are not healthy:
-        health -= 5;
-        $('#health').html(health);
-
-        if ( ! alien_is_alive())
-        {
-            game_over_lost();
-        }
+        make_alien_sicker(5);
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
