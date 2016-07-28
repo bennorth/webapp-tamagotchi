@@ -118,8 +118,6 @@ $(document).ready(function()
     function make_alien_hungrier()
     {
         hungriness += 5;
-        $('#hungriness').html(hungriness);
-        draw_alien();
     }
 
     function make_alien_sicker(health_lost)
