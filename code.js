@@ -102,11 +102,22 @@ $(document).ready(function()
         window.setTimeout(time_goes_by, 2000);
     }
 
+    function update_display()
+    {
+        $('#hungriness').html(hungriness);
+        $('#health').html(health);
+        $('#happiness').html(happiness);
+        $('#age').html(age);
+        draw_alien();
+        if ( ! alien_still_growing())
+            game_over_won();
+        else if ( ! alien_is_alive())
+            game_over_lost();
+    }
+
     function make_alien_hungrier()
     {
         hungriness += 5;
-        $('#hungriness').html(hungriness);
-        draw_alien();
     }
 
     function make_alien_sicker(health_lost)
@@ -115,14 +126,6 @@ $(document).ready(function()
         if (health < 0)
         {
             health = 0;
-        }
-
-        $('#health').html(health);
-        draw_alien();
-
-        if ( ! alien_is_alive())
-        {
-            game_over_lost();
         }
     }
 
@@ -141,15 +144,11 @@ $(document).ready(function()
         {
             health = 100;
         }
-
-        $('#health').html(health);
-        draw_alien();
     }
 
     function make_alien_older()
     {
         age += 1;
-        $('#age').html(age);
     }
 
     function update_alien_happiness()
@@ -174,9 +173,6 @@ $(document).ready(function()
             happiness += 2;
             if (happiness > 100) happiness = 100;
         }
-
-        $('#happiness').html(happiness);
-        draw_alien();
     }
 
     function feed_alien(hungriness_reduction)
@@ -186,9 +182,6 @@ $(document).ready(function()
         {
             hungriness = 0;
         }
-
-        $('#hungriness').html(hungriness);
-        draw_alien();
     }
 
     function temporarily_disable(button_id)
@@ -206,6 +199,8 @@ $(document).ready(function()
 
         feed_alien(20);
         temporarily_disable('#feed-bread');
+
+        update_display();
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
@@ -221,10 +216,11 @@ $(document).ready(function()
         // Sweets make the Tamagotchi a bit happier:
         happiness += 10;
         if (happiness > 100) happiness = 100;
-        $('#happiness').html(happiness);
 
         // Sweets are not healthy:
         make_alien_sicker(5);
+
+        update_display();
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
@@ -236,6 +232,8 @@ $(document).ready(function()
 
         make_healthier();
         temporarily_disable('#give-medicine');
+
+        update_display();
     }
 
     $('#give-medicine').click(give_alien_medicine);
@@ -248,6 +246,8 @@ $(document).ready(function()
         last_game_age = age;
         update_alien_happiness();
         temporarily_disable('#play-game');
+
+        update_display();
     }
 
     $('#play-game').click(play_game);
@@ -272,17 +272,8 @@ $(document).ready(function()
         make_alien_older();
         update_alien_happiness();
 
-        if ( ! alien_still_growing())
-        {
-            game_over_won();
-        }
-        else if ( ! alien_is_alive())
-        {
-            game_over_lost();
-        }
-        else
-        {
-            window.setTimeout(time_goes_by, 2000);
-        }
+        update_display();
+
+        window.setTimeout(time_goes_by, 2000);
     }
 });
