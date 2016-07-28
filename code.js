@@ -186,6 +186,9 @@ $(document).ready(function()
 
     function play_game()
     {
+        if ( ! game_is_running())
+            return;
+
         last_game_age = age;
         temporarily_disable('#play-game');
     }
