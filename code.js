@@ -143,6 +143,9 @@ $(document).ready(function()
 
     function give_alien_medicine()
     {
+        if ( ! game_is_running())
+            return;
+
         make_healthier();
         temporarily_disable('#give-medicine');
     }
