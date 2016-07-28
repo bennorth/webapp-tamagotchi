@@ -199,6 +199,8 @@ $(document).ready(function()
 
         feed_alien(20);
         temporarily_disable('#feed-bread');
+
+        update_display();
     }
 
     $('#feed-bread').click(feed_alien_some_bread);
@@ -217,6 +219,8 @@ $(document).ready(function()
 
         // Sweets are not healthy:
         make_alien_sicker(5);
+
+        update_display();
     }
 
     $('#feed-sweets').click(feed_alien_sweets);
@@ -228,6 +232,8 @@ $(document).ready(function()
 
         make_healthier();
         temporarily_disable('#give-medicine');
+
+        update_display();
     }
 
     $('#give-medicine').click(give_alien_medicine);
@@ -240,6 +246,8 @@ $(document).ready(function()
         last_game_age = age;
         update_alien_happiness();
         temporarily_disable('#play-game');
+
+        update_display();
     }
 
     $('#play-game').click(play_game);
@@ -264,17 +272,6 @@ $(document).ready(function()
         make_alien_older();
         update_alien_happiness();
 
-        if ( ! alien_still_growing())
-        {
-            game_over_won();
-        }
-        else if ( ! alien_is_alive())
-        {
-            game_over_lost();
-        }
-        else
-        {
-            window.setTimeout(time_goes_by, 2000);
-        }
+        update_display();
     }
 });
