@@ -214,7 +214,6 @@ $(document).ready(function()
         // Sweets make the Tamagotchi a bit happier:
         happiness += 10;
         if (happiness > 100) happiness = 100;
-        $('#happiness').html(happiness);
 
         // Sweets are not healthy:
         make_alien_sicker(5);
