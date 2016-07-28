@@ -210,6 +210,11 @@ $(document).ready(function()
         feed_alien(10);
         temporarily_disable('#feed-sweets');
 
+        // Sweets make the Tamagotchi a bit happier:
+        happiness += 10;
+        if (happiness > 100) happiness = 100;
+        $('#happiness').html(happiness);
+
         // Sweets are not healthy:
         make_alien_sicker(5);
     }
