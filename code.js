@@ -182,9 +182,6 @@ $(document).ready(function()
         {
             hungriness = 0;
         }
-
-        $('#hungriness').html(hungriness);
-        draw_alien();
     }
 
     function temporarily_disable(button_id)
