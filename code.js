@@ -149,7 +149,6 @@ $(document).ready(function()
     function make_alien_older()
     {
         age += 1;
-        $('#age').html(age);
     }
 
     function update_alien_happiness()
