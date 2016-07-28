@@ -173,9 +173,6 @@ $(document).ready(function()
             happiness += 2;
             if (happiness > 100) happiness = 100;
         }
-
-        $('#happiness').html(happiness);
-        draw_alien();
     }
 
     function feed_alien(hungriness_reduction)
