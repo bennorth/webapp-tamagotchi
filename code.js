@@ -144,9 +144,6 @@ $(document).ready(function()
         {
             health = 100;
         }
-
-        $('#health').html(health);
-        draw_alien();
     }
 
     function make_alien_older()
