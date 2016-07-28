@@ -154,7 +154,7 @@ $(document).ready(function()
 
     function update_alien_happiness()
     {
-        bored = ((age - last_game_age) >= 3);
+        bored = ((age - last_game_age) >= 5);
 
         if (bored)
         {
