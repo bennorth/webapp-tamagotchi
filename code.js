@@ -156,6 +156,14 @@ $(document).ready(function()
     {
         bored = ((age - last_game_age) >= 5);
 
+        if (health < 75)
+        {
+            if (happiness > 40)
+            {
+                happiness -= 5;
+            }
+        }
+
         if (bored)
         {
             happiness -= 5;
