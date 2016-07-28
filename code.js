@@ -127,14 +127,6 @@ $(document).ready(function()
         {
             health = 0;
         }
-
-        $('#health').html(health);
-        draw_alien();
-
-        if ( ! alien_is_alive())
-        {
-            game_over_lost();
-        }
     }
 
     function maybe_make_alien_sicker()
