@@ -273,5 +273,7 @@ $(document).ready(function()
         update_alien_happiness();
 
         update_display();
+
+        window.setTimeout(time_goes_by, 2000);
     }
 });
