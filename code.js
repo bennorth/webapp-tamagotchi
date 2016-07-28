@@ -102,6 +102,19 @@ $(document).ready(function()
         window.setTimeout(time_goes_by, 2000);
     }
 
+    function update_display()
+    {
+        $('#hungriness').html(hungriness);
+        $('#health').html(health);
+        $('#happiness').html(happiness);
+        $('#age').html(age);
+        draw_alien();
+        if ( ! alien_still_growing())
+            game_over_won();
+        else if ( ! alien_is_alive())
+            game_over_lost();
+    }
+
     function make_alien_hungrier()
     {
         hungriness += 5;
