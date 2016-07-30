@@ -81,6 +81,11 @@ $(document).ready(function()
             ctx.lineTo(280, 130);
         }
         ctx.stroke();
+
+        ctx.fillStyle = 'red';
+        sweet_wrappers.forEach(function(w) {
+            ctx.fillRect(w[0], w[1], 50, 20);
+        });
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
