@@ -274,6 +274,8 @@ $(document).ready(function()
         update_display();
     }
 
+    $('#sweep-up').click(sweep_up_wrappers);
+
     function add_sweet_wrapper()
     {
         var wrapper_x = 10 + Math.random() * 420;
