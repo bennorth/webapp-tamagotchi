@@ -159,6 +159,12 @@ $(document).ready(function()
 
     function update_alien_happiness()
     {
+        happiness -= sweet_wrappers.length;
+        if (happiness < 0)
+        {
+            happiness = 0;
+        }
+
         bored = ((age - last_game_age) >= 5);
 
         if (health < 75)
