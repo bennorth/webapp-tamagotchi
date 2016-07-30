@@ -265,7 +265,7 @@ $(document).ready(function()
 
         var wrapper = [wrapper_x, wrapper_y];
 
-        // TODO: Add the new wrapper to the list.
+        sweet_wrappers.push(wrapper);
     }
 
     function game_over_lost()
