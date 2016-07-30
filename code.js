@@ -226,6 +226,8 @@ $(document).ready(function()
         // Sweets are not healthy:
         make_alien_sicker(5);
 
+        add_sweet_wrapper();
+
         update_display();
     }
 
