@@ -9,6 +9,7 @@ $(document).ready(function()
     var bored = false;
     var last_game_age = 0;
     var age = 0;
+    var sweet_wrappers = [];
 
     function alien_is_alive()
     {
@@ -80,6 +81,11 @@ $(document).ready(function()
             ctx.lineTo(280, 130);
         }
         ctx.stroke();
+
+        ctx.fillStyle = 'red';
+        sweet_wrappers.forEach(function(w) {
+            ctx.fillRect(w[0], w[1], 50, 20);
+        });
     }
 
     $('#hatch').click(draw_alien_fade_instructions);
@@ -153,6 +159,9 @@ $(document).ready(function()
 
     function update_alien_happiness()
     {
+        happiness -= sweet_wrappers.length;
+        if (happiness < 0) happiness = 0;
+
         bored = ((age - last_game_age) >= 5);
 
         if (health < 75)
@@ -220,6 +229,8 @@ $(document).ready(function()
         // Sweets are not healthy:
         make_alien_sicker(5);
 
+        add_sweet_wrapper();
+
         update_display();
     }
 
@@ -251,6 +262,26 @@ $(document).ready(function()
     }
 
     $('#play-game').click(play_game);
+
+    function sweep_up_wrappers()
+    {
+        sweet_wrappers = [];
+        temporarily_disable('#sweep-up');
+
+        update_display();
+    }
+
+    $('#sweep-up').click(sweep_up_wrappers);
+
+    function add_sweet_wrapper()
+    {
+        var wrapper_x = 10 + Math.random() * 420;
+        var wrapper_y = 240 + Math.random() * 200;
+
+        var wrapper = [wrapper_x, wrapper_y];
+
+        sweet_wrappers.push(wrapper);
+    }
 
     function game_over_lost()
     {
