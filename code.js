@@ -9,7 +9,7 @@ $(document).ready(function()
     var bored = false;
     var last_game_age = 0;
     var age = 0;
-    var sweet_wrappers = [];
+    var sweet_wrappers = [ [280, 300], [140, 320] ];
 
     function alien_is_alive()
     {
