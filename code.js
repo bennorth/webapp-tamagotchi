@@ -258,6 +258,14 @@ $(document).ready(function()
 
     $('#play-game').click(play_game);
 
+    function add_sweet_wrapper()
+    {
+        var wrapper_x = 10 + Math.random() * 420;
+        var wrapper_y = 240 + Math.random() * 200;
+
+        // TODO: Add the new wrapper to the list.
+    }
+
     function game_over_lost()
     {
         $('#messages').html('Oh no!  Your Tamagotchi died!');
