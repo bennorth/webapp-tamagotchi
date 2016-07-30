@@ -263,6 +263,8 @@ $(document).ready(function()
         var wrapper_x = 10 + Math.random() * 420;
         var wrapper_y = 240 + Math.random() * 200;
 
+        var wrapper = [wrapper_x, wrapper_y];
+
         // TODO: Add the new wrapper to the list.
     }
 
