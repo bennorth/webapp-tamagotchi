@@ -266,6 +266,14 @@ $(document).ready(function()
 
     $('#play-game').click(play_game);
 
+    function sweep_up_wrappers()
+    {
+        sweet_wrappers = [];
+        temporarily_disable('#sweep-up');
+
+        update_display();
+    }
+
     function add_sweet_wrapper()
     {
         var wrapper_x = 10 + Math.random() * 420;
